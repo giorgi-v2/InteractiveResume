@@ -10,9 +10,49 @@
 .content__home-greeting {
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: var(--spacing-3xl);
+}
+
+.content__home-greeting-visual-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  height: 289px;
+}
+
+@property --gradientAngle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes colorAnimation {
+  0% {
+    --gradientAngle: 0deg;
+  }
+  50% {
+    --gradientAngle: 180deg;
+  }
+  100% {
+    --gradientAngle: 0deg;
+  }
+}
+
+.content__home-greeting-visual {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  transition: all;
+  animation: colorAnimation 3s linear infinite;
+  background-image: linear-gradient(
+    var(--gradientAngle),
+    color-mix(in srgb, var(--color-accent-brand) 80%, transparent),
+    color-mix(in srgb, var(--color-accent-brand) 20%, transparent)
+  );
 }
 
 .content__home-greeting-lines {
@@ -50,6 +90,10 @@
   font-weight: 700;
   font-size: 64px;
   color: var(--color-text-primary);
+}
+
+.content__home-greeting-line-icon {
+  color: var(--color-accent-brand);
 }
 
 .content__home-greeting-line-highlight {
@@ -99,7 +143,7 @@
 }
 
 .content__home-footer-button {
-  background-color: white;
+  background-color: transparent;
   border: none;
   color: var(--color-text-tertiary);
   cursor: pointer;
@@ -119,4 +163,10 @@
 
 .content__home-footer-icon {
   animation: rotation 0.7s ease infinite;
+}
+
+@media (max-width: 768px) {
+  .content__home-greeting-visual-container {
+    display: none;
+  }
 }
