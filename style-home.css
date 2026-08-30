@@ -1,0 +1,122 @@
+.content__home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.content__home-greeting {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content__home-greeting-lines {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--spacing-3xl);
+}
+
+.content__home-greeting-line {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.content__home-greeting-line-number {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-text-tertiary);
+}
+
+.content__home-greeting-line-tag {
+  display: flex;
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  justify-content: center;
+  align-items: center;
+}
+
+.content__home-greeting-line-text {
+  font-weight: 700;
+  font-size: 64px;
+  color: var(--color-text-primary);
+}
+
+.content__home-greeting-line-highlight {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.content__home-greeting-line-highlight-1 {
+  background-image: linear-gradient(
+    60deg,
+    color-mix(in srgb, var(--color-accent-brand) 20%, transparent),
+    var(--color-accent-brand)
+  );
+}
+
+.content__home-greeting-line-highlight-2 {
+  background-image: linear-gradient(
+    250deg,
+    color-mix(in srgb, var(--color-accent-brand) 20%, transparent),
+    var(--color-accent-brand)
+  );
+}
+
+.content__home-greeting-line-highlight-3 {
+  background-image: linear-gradient(
+    140deg,
+    color-mix(in srgb, var(--color-accent-brand) 20%, transparent),
+    var(--color-accent-brand)
+  );
+}
+
+.content__home-footer {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--spacing-3xl);
+  padding-top: var(--spacing-3xl);
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.content__home-footer-text {
+  color: var(--color-text-secondary);
+  font-size: var(--spacing-lg);
+}
+
+.content__home-footer-button {
+  background-color: white;
+  border: none;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+}
+
+@keyframes rotation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.content__home-footer-icon {
+  animation: rotation 0.7s ease infinite;
+}
