@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  padding: var(--spacing-3xl);
+  gap: 16px;
 }
 
 .content__skills-text {
@@ -14,10 +16,20 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
+  width: 100%;
+}
+
+.content__skills-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .content__skills-card-title-container {
-  
+  display: flex;
+  gap: 10px;
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid #ebeef1;
 }
 
 .content__skills-card-title {
@@ -28,17 +40,38 @@
 
 .content__skills-card {
   display: flex;
-  flex-direction: row;
   width: 100%;
   padding: var(--spacing-lg);
-  gap: 10px;
+  gap: var(--spacing-lg);
   border-radius: 16px;
+  background-color: color-mix(
+    in srgb,
+    var(--color-accent-brand) 3%,
+    transparent
+  );
+}
+
+.content__skills-card-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-lg);
+  height: calc(100% - var(--spacing-lg) * 2);
+  background-color: #0070ff0f;
+  border-radius: 12px;
 }
 
 .content__skills-card-icon {
-  width: fit-content;
-  height: fit-content;
-  background-color: #006eff44;
+  color: var(--color-accent-brand);
+  font-size: 20px;
+}
+
+.content__skils-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  gap: var(--spacing-lg);
 }
 
 .content__skill-name {
@@ -46,20 +79,22 @@
   font-weight: 700;
   font-size: 20px;
   color: var(--color-text-primary);
+  text-wrap: nowrap;
+  margin: 0;
 }
 
-.content__skill-type-container {
+.content__skill-tags {
   display: flex;
   padding-bottom: var(--spacing-xs);
   padding-top: var(--spacing-xs);
   padding-left: var(--spacing-sm);
   padding-right: var(--spacing-sm);
-  gap: 10px;
+  gap: var(--spacing-xs);
   background-color: var(--color-accent-brand);
   border-radius: 999px;
 }
 
-.content__skill-type {
+.content__skill-tag {
   font-size: 14px;
   font-weight: 700;
   color: var(--color-background-default);
@@ -69,7 +104,8 @@
   display: flex;
   flex-direction: row;
   gap: 4px;
-  border-radius: 999px;
+  width: 100%;
+  justify-content: end;
 }
 
 .content__skills-level {
@@ -77,20 +113,17 @@
   width: 14px;
   height: 14px;
   border-radius: 999px;
+  background-color: var(--color-accent-brand);
 }
 
-.content__skills-level-beginner {
-  background-color: var(--color-skill-beginner);
+.content__skils-card-body-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-lg);
+  width: 100%;
 }
-.content__skills-level-elementary {
-  background-color: var(--color-skill-elementary);
-}
-.content__skills-level-intermediate {
-  background-color: var(--color-skill-intermediate);
-}
-.content__skills-level-advanced {
-  background-color: var(--color-skill-advanced);
-}
-.content__skills-level-expert {
-  background-color: var(--color-skill-expert);
+
+.content__skills-card-body-content {
+  color: var(--color-text-secondary);
 }
