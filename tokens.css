@@ -5,7 +5,7 @@
   --color-icon-secondary: #b4bfcd;
   --color-border-default: #b4bfcd45;
   --color-text-tertiary: #9aa2ae;
-  --color-background-default:#FFFFFF;
+  --color-background-default: #ffffff;
 
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -21,4 +21,10 @@
   --font-size-lg: 24px;
   --font-size-xl: 28px;
   --font-size-2xl: 32px;
+
+  --color-skill-beginner: #9b0000;
+  --color-skill-elementary: #9b4b00;
+  --color-skill-intermediate: #9b9800;
+  --color-skill-advanced: #609b00;
+  --color-skill-expert: #11c201;
 }

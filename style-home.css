@@ -170,3 +170,12 @@
     display: none;
   }
 }
+
+@media (max-width: 480px) {
+  .content__home-greeting-visual-container {
+    display: none;
+  }
+  .content__home-greeting-line-text {
+    font-size: 32px;
+  }
+}

@@ -1,6 +1,6 @@
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .sidebar {
-    max-width:64px;
+    max-width: 64px;
   }
 
   .avatar__image {
@@ -17,7 +17,7 @@
     display: none !important;
   }
 
-  .navigation__link span{
+  .navigation__link span {
     display: none !important;
   }
 
@@ -30,7 +30,7 @@
   body {
     flex-direction: column-reverse !important;
   }
-  .avatar{
+  .avatar {
     display: none !important;
   }
 
@@ -41,13 +41,16 @@
     max-height: auto !important;
   }
 
-  .navigation{
+  .navigation {
     flex-direction: row !important;
     border-top: 1px solid var(--color-border-default) !important;
+    max-height: auto !important;
+    padding-top: var(--spacing-sm) !important;
+    padding-bottom: var(--spacing-sm) !important;
   }
 
-  .contacts{
-    display:none !important;
+  .contacts {
+    display: none !important;
   }
 }
 
