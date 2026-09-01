@@ -21,4 +21,5 @@ body {
     color-mix(in srgb, var(--color-background-default) 10%, transparent),
     color-mix(in srgb, var(--color-accent-brand) 20%, transparent)
   );
+  scroll-behavior: smooth;
 }

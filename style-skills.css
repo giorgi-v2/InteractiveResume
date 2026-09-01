@@ -1,7 +1,7 @@
 .content__skills {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: calc(100vh - var(--spacing-3xl) * 2);
   padding: var(--spacing-3xl);
   gap: 16px;
 }
@@ -126,6 +126,56 @@
 
 .content__skills-card-body-content {
   color: var(--color-text-secondary);
+}
+
+.content__skills-search {
+  width: 100%;
+  bottom: 0;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.content__skills-search-filters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.content__skills-search-filters-tag {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-top: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
+  padding-left: var(--spacing-sm);
+  padding-right: var(--spacing-lg);
+  gap: 10px;
+  border-radius: 999px;
+}
+
+.content__skills-search-filters-icon {
+  color: var(--color-icon-secondary);
+}
+
+.content__skills-search-filters-tag-brand-one {
+  background-color: color-mix(
+    in srgb,
+    var(--color-accent-brand) 10%,
+    transparent
+  );
+  color: var(--color-accent-brand);
+}
+.content__skills-search-filters-tag-brand-two {
+  background-color: color-mix(
+    in srgb,
+    var(--color-brand-second) 10%,
+    transparent
+  );
+  color: var(--color-brand-second);
 }
 
 .content__skills-search-content {

@@ -46,10 +46,6 @@
             ><i class="fa-solid fa-building-columns navigaion__link-icon"></i
             ><span>Education</span></a
           >
-          <a href="#projects" class="navigation__link"
-            ><i class="fa-solid fa-suitcase navigaion__link-icon"></i
-            ><span>Projects</span></a
-          >
           <a href="#contacts" class="navigation__link"
             ><i class="fa-solid fa-phone navigaion__link-icon"></i
             ><span>Contacts</span></a
@@ -69,7 +65,7 @@
       </div>
     </div>
     <div class="content">
-      <div class="content__home">
+      <section id="home" class="content__home">
         <div class="content__home-greeting">
           <div class="content__home-greeting-visual-container">
             <div class="content__home-greeting-visual"></div>
@@ -123,8 +119,8 @@
             <i class="fa-solid fa-chevron-down content__home-footer-icon"></i>
           </button>
         </div>
-      </div>
-      <div class="content__skills">
+      </section>
+      <section id="skills" class="content__skills">
         <span class="content__skills-text">What I can do...</span>
         <div class="content__skills-card-container">
           <div class="content__skills-cards">
@@ -185,7 +181,7 @@
             </div>
             <div class="content__skills-card">
               <div class="content__skills-card-icon-container">
-                <i class="fa-brands fa-css3-alt content__skills-card-icon"></i>
+                <i class="fa-brands fa-square-js content__skills-card-icon"></i>
               </div>
               <div class="content__skils-card-body">
                 <div class="content__skils-card-body-header">
@@ -209,7 +205,9 @@
             </div>
             <div class="content__skills-card">
               <div class="content__skills-card-icon-container">
-                <i class="fa-brands fa-css3-alt content__skills-card-icon"></i>
+                <i
+                  class="fa-brands fa-typescript content__skills-card-icon"
+                ></i>
               </div>
               <div class="content__skils-card-body">
                 <div class="content__skils-card-body-header">
@@ -238,7 +236,21 @@
         </div>
         <div class="content__skills-search">
           <div class="content__skills-search-filters">
-            <div></div>
+            <i
+              class="fa-solid fa-filter content__skills-search-filters-icon"
+            ></i>
+            <button
+              class="content__skills-search-filters-tag content__skills-search-filters-tag-brand-one"
+            >
+              <i class="fa-solid fa-circle-plus"></i>
+              <span>Programming</span>
+            </button>
+            <button
+              class="content__skills-search-filters-tag content__skills-search-filters-tag-brand-two"
+            >
+              <i class="fa-solid fa-circle-plus"></i>
+              <span>Language</span>
+            </button>
           </div>
           <div class="content__skills-search-content">
             <i
@@ -251,7 +263,7 @@
             />
           </div>
         </div>
-      </div>
+      </section>
     </div>
     <script src="main.js"></script>
   </body>
