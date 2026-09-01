@@ -127,3 +127,31 @@
 .content__skills-card-body-content {
   color: var(--color-text-secondary);
 }
+
+.content__skills-search-content {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  padding-right: var(--spacing-lg);
+  padding-left: var(--spacing-lg);
+  gap: var(--spacing-sm);
+  border: 2px solid var(--color-border-secondary);
+  border-radius: 999px;
+  background-color: var(--color-background-default);
+}
+
+.content__skills-search-input {
+  border-width: 0;
+  width: 100%;
+  color: #9aa2ae;
+}
+
+.content__skills-search-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.content__skills-search-icon {
+  color: var(--color-icon-secondary);
+}
