@@ -1,0 +1,115 @@
+.content__education {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-3xl);
+  height: 100%;
+}
+
+.content__education-list-row-card {
+  display: flex;
+  width: 100%;
+  padding: var(--spacing-lg);
+  gap: var(--spacing-lg);
+  border-radius: 16px;
+  background-color: color-mix(
+    in srgb,
+    var(--color-accent-brand) 3%,
+    transparent
+  );
+}
+
+.content__education-text {
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.content__education-list {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.content__education-list-row {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.content__education-list-row-institution {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-2xl);
+  padding-top: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
+  padding-left: var(--spacing-sm);
+  padding-right: var(--spacing-sm);
+}
+
+.content__education-list-row-dates {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 32px;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.content__education-card-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-lg);
+  height: calc(100% - var(--spacing-lg) * 2);
+  background-color: #0070ff0f;
+  border-radius: var(--spacing-md);
+}
+
+.content__education-card-icon {
+  color: var(--color-accent-brand);
+  font-size: 20px;
+}
+
+.content__education-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  gap: var(--spacing-lg);
+}
+
+.content__education-name {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-text-primary);
+  text-wrap: nowrap;
+  margin: 0;
+}
+
+.content__education-tags {
+  display: flex;
+  padding-bottom: var(--spacing-xs);
+  padding-top: var(--spacing-xs);
+  padding-left: var(--spacing-sm);
+  padding-right: var(--spacing-sm);
+  gap: var(--spacing-xs);
+  background-color: var(--color-accent-brand);
+  border-radius: 999px;
+}
+
+.content__education-tag {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-background-default);
+}
+
+.content__education-card-body-content {
+  color: var(--color-text-secondary);
+}
