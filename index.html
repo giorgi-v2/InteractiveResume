@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
     <title>Giorgi's resume</title>
     <link rel="stylesheet" href="tokens.css" />
     <link rel="stylesheet" href="style.css" />
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="style-home.css" />
     <link rel="stylesheet" href="style-skills.css" />
     <link rel="stylesheet" href="style-education.css" />
+    <link rel="stylesheet" href="style-aboutme.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,7 +41,7 @@
             ><i class="fa-solid fa-house navigaion__link-icon"></i
             ><span>Home</span></a
           >
-          <a href="#contacts" class="navigation__link"
+          <a href="#aboutMe" class="navigation__link"
             ><i class="fa-solid fa-phone navigaion__link-icon"></i
             ><span>About me</span></a
           >
@@ -119,6 +121,35 @@
           <button class="content__home-footer-button">
             <i class="fa-solid fa-chevron-down content__home-footer-icon"></i>
           </button>
+        </div>
+      </section>
+      <section id="aboutMe" class="content__aboutMe">
+        <div class="content__aboutMe-container">
+          <h1>&lt; Little bit about myself /&gt;</h1>
+          <span
+            >&lt; I'm really communicative person, if i like new person's energy
+            and we match, we really are going to have a fun /&gt;</span
+          >
+          <span
+            >&lt; Worked in different fields, made a lot friends, but always
+            stayed professional at work &lt;3 /&gt;</span
+          >
+          <span
+            >&lt; Becoming a programmer/developer was a dream for me since
+            childhood /&gt;</span
+          >
+          <span
+            >&lt; Studied in university backend didn't really liked it and i
+            dropped out, was focused on work /&gt;</span
+          >
+          <span
+            >&lt; But then i made few frontend developer frinds and i felt that
+            this field is for me /&gt;</span
+          >
+          <span
+            >&lt; Learned a lot since 2025 and here i am applying in your
+            company /&gt;</span
+          >
         </div>
       </section>
       <section id="skills" class="content__skills">
@@ -273,7 +304,9 @@
           <div class="content__education-list">
             <div class="content__education-list-row">
               <div class="content__education-list-row-dates">
-                09.2009 - 06.2021
+                <span>09.2009</span>
+                <span>|</span>
+                <span>06.2021</span>
               </div>
               <div class="content__education-list-row-card">
                 <div class="content__education-card-icon-container">
@@ -305,12 +338,14 @@
           <div class="content__education-list">
             <div class="content__education-list-row">
               <div class="content__education-list-row-dates">
-                09.2021-11.2023
+                <span>09.2021</span>
+                <span>|</span>
+                <span>11.2023</span>
               </div>
               <div class="content__education-list-row-card">
                 <div class="content__education-card-icon-container">
                   <i
-                    class="fa-solid fa-school content__education-card-icon"
+                    class="fa-solid fa-building-columns content__education-card-icon"
                   ></i>
                 </div>
                 <div class="content__education-card-body">
@@ -337,12 +372,14 @@
           <div class="content__education-list">
             <div class="content__education-list-row">
               <div class="content__education-list-row-dates">
-                11.2025 - till today
+                <span>11.2025 </span>
+                <span>|</span>
+                <span>today</span>
               </div>
               <div class="content__education-list-row-card">
                 <div class="content__education-card-icon-container">
                   <i
-                    class="fa-solid fa-school content__education-card-icon"
+                    class="fa-solid fa-graduation-cap content__education-card-icon"
                   ></i>
                 </div>
                 <div class="content__education-card-body">
@@ -367,5 +404,6 @@
       </section>
     </div>
     <script src="main.js"></script>
+    <script src="script-navigation.js"></script>
   </body>
 </html>

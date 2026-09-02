@@ -6,8 +6,8 @@
   --color-border-default: #b4bfcd45;
   --color-text-tertiary: #9aa2ae;
   --color-background-default: #ffffff;
-  --color-border-secondary: #F7FAFF;
-  --color-brand-second: #941AFF;
+  --color-border-secondary: #f7faff;
+  --color-brand-second: #941aff;
 
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -23,5 +23,14 @@
   --font-size-lg: 24px;
   --font-size-xl: 28px;
   --font-size-2xl: 32px;
+}
 
+html[data-theme="dark"] {
+  --color-text-primary: #f3f8ff;
+  --color-accent-brand: #0070ff;
+  --color-icon-secondary: #4a525b;
+  --color-border-default: #b4bfcd45;
+  --color-text-tertiary: #6d747e;
+  --color-background-default: #060606;
+  --color-border-secondary: #b4bfcd45;
 }
