@@ -51,19 +51,42 @@
   );
 }
 
+.content__skills-card.content__skills-card-soft {
+  background-color: color-mix(
+    in srgb,
+    var(--color-brand-second) 3%,
+    transparent
+  );
+}
+
 .content__skills-card-icon-container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: var(--spacing-lg);
-  height: calc(100% - var(--spacing-lg) * 2);
-  background-color: #0070ff0f;
+  background-color: color-mix(
+    in srgb,
+    var(--color-accent-brand) 3%,
+    transparent
+  );
   border-radius: 12px;
+}
+
+.content__skills-card-soft .content__skills-card-icon-container {
+  background-color: color-mix(
+    in srgb,
+    var(--color-brand-second) 3%,
+    transparent
+  );
 }
 
 .content__skills-card-icon {
   color: var(--color-accent-brand);
   font-size: 20px;
+}
+
+.content__skills-card-soft .content__skills-card-icon {
+  color: var(--color-brand-second);
 }
 
 .content__skills-card-body {
@@ -94,10 +117,15 @@
   border-radius: 999px;
 }
 
+.content__skills-card-soft .content__skill-tags {
+  background-color: var(--color-brand-second);
+}
+
 .content__skill-tag {
   font-size: 14px;
   font-weight: 700;
-  color: var(--color-background-default);
+  color: var(--color-text-inverse);
+  text-wrap: nowrap;
 }
 
 .content__skills-level-container {
@@ -113,7 +141,15 @@
   width: 14px;
   height: 14px;
   border-radius: 999px;
+  background-color: var(--color-icon-secondary);
+}
+
+.content__skills-level--active {
   background-color: var(--color-accent-brand);
+}
+
+.content__skills-card-soft .content__skills-level--active {
+  background-color: var(--color-brand-second);
 }
 
 .content__skills-card-body-header {
@@ -130,7 +166,7 @@
 
 .content__skills-search {
   width: 100%;
-  bottom: 0;
+  top: 0;
   position: sticky;
   display: flex;
   flex-direction: column;
@@ -162,6 +198,10 @@
   color: var(--color-icon-secondary);
 }
 
+.content__skills-search-filters-icon--active {
+  color: var(--color-accent-brand);
+}
+
 .content__skills-search-filters-tag-brand-one {
   background-color: color-mix(
     in srgb,
@@ -171,12 +211,40 @@
   color: var(--color-accent-brand);
 }
 
+.content__skills-search-filters-tag-brand-one.content__skills-search-filters-tag--active {
+  background-color: var(--color-accent-brand);
+  color: var(--color-text-inverse);
+}
+
+.content__skills-search-filters-tag-brand-one.content__skills-search-filters-tag--active:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--color-accent-brand) 90%,
+    transparent
+  );
+  color: var(--color-text-inverse);
+}
+
 .content__skills-search-filters-tag-brand-one:hover {
   background-color: color-mix(
     in srgb,
     var(--color-accent-brand) 20%,
     transparent
   );
+}
+
+.content__skills-search-filters-tag-brand-two.content__skills-search-filters-tag--active {
+  background-color: var(--color-brand-second);
+  color: var(--color-text-inverse);
+}
+
+.content__skills-search-filters-tag-brand-two.content__skills-search-filters-tag--active:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--color-brand-second) 90%,
+    transparent
+  );
+  color: var(--color-text-inverse);
 }
 
 .content__skills-search-filters-tag-brand-two {
@@ -212,7 +280,7 @@
 .content__skills-search-input {
   border-width: 0;
   width: 100%;
-  color: #9aa2ae;
+  background: transparent;
 }
 
 .content__skills-search-input:focus {

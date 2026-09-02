@@ -1,6 +1,7 @@
 :root {
   --color-text-primary: #28303c;
   --color-text-secondary: #68707d;
+  --color-text-inverse: #fbfbfc;
   --color-accent-brand: #0070ff;
   --color-icon-secondary: #b4bfcd;
   --color-border-default: #b4bfcd45;
@@ -27,10 +28,11 @@
 
 html[data-theme="dark"] {
   --color-text-primary: #f3f8ff;
+  --color-text-inverse: #040404;
   --color-accent-brand: #0070ff;
   --color-icon-secondary: #4a525b;
   --color-border-default: #b4bfcd45;
   --color-text-tertiary: #6d747e;
   --color-background-default: #060606;
-  --color-border-secondary: #b4bfcd45;
+  --color-border-secondary: #b4bfcd18;
 }

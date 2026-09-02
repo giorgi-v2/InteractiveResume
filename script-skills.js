@@ -1,21 +1,40 @@
 class SkillsRenderer {
-  #lastSkills;
+  #container;
 
-  constructor(container) {}
+  constructor(container) {
+    this.#container = container;
+  }
 
   render(data) {
     const filteredSkills = data.filteredSkills;
     if (filteredSkills.length === 0) {
-      this.container.innerHTML = this.getEmptyHtml();
+      this.#container.innerHTML = this.getEmptyHtml();
       return;
     }
 
-    // change detection is here
+    this.#container.innerHTML = "";
 
-    // first clean up
-    
+    const [hardSkillsContainer, softSkillsContainer] =
+      this.getCardContainerHtmlElements();
 
-    this.#lastSkills = JSON.parse(JSON.stringify(data.filteredSkills));
+    const hardSkills = filteredSkills.filter((x) => x.type === "hard");
+
+    const softSkills = filteredSkills.filter((x) => x.type === "soft");
+
+    if (hardSkills.length > 0) {
+      hardSkillsContainer.innerHTML += hardSkills
+        .map(this.getCardHtml)
+        .join(" ");
+      this.#container.appendChild(hardSkillsContainer);
+    }
+
+    if (softSkills.length > 0) {
+      softSkillsContainer.innerHTML += softSkills
+        .map(this.getCardHtml)
+        .join(" ");
+
+      this.#container.appendChild(softSkillsContainer);
+    }
   }
 
   getEmptyHtml() {
@@ -33,13 +52,35 @@ class SkillsRenderer {
     hardSkillsContainer.innerHTML = `<div class="content__skills-card-title-container">
         <span class="content__skills-card-title">Hard Skills</span>
     </div>`;
-    this.container.appendChild(hardSkillsContainer);
-    this.container.appendChild(hardSkillsContainer);
     return [hardSkillsContainer, softSkillsContainer];
   }
 
   getCardHtml(skill) {
-    
+    return `<div class="content__skills-card ${skill.type === "soft" ? "content__skills-card-soft" : ""}">
+        <div class="content__skills-card-icon-container">
+            <i class="${skill.iconClassNames} content__skills-card-icon"></i>
+        </div>
+        <div class="content__skills-card-body">
+            <div class="content__skills-card-body-header">
+                <h2 class="content__skill-name">${skill.name}</h2>
+                <div class="content__skill-tags">
+                    ${skill.tags.map((x) => `<span class="content__skill-tag">${x}</span>`).join(" ")}
+                </div>
+                <div class="content__skills-level-container">
+                    ${[1, 2, 3, 4, 5]
+                      .map((x) =>
+                        x <= skill.level
+                          ? '<div class="content__skills-level content__skills-level--active"></div>'
+                          : '<div class="content__skills-level"></div>',
+                      )
+                      .join(" ")}
+                </div>
+            </div>
+            <div class="content__skills-card-body-content">
+                ${skill.description}
+            </div>
+        </div>
+    </div>`;
   }
 }
 
@@ -47,32 +88,117 @@ class SkillsFilterRenderer {
   #lastFilter;
 
   render(data) {
-    // detect changes
+    const [activateTags, deactivateTags] = this.getChangedTags(data.filter);
+
+    const filterIcon = document.querySelector(
+      ".content__skills-search-filters-icon",
+    );
+    if (filterIcon) {
+      if (data.filter.searchTerm || data.filter.tags.length) {
+        if (
+          !filterIcon.classList.contains(
+            "content__skills-search-filters-icon--active",
+          )
+        ) {
+          filterIcon.classList.add(
+            "content__skills-search-filters-icon--active",
+          );
+        }
+      } else {
+        if (
+          filterIcon.classList.contains(
+            "content__skills-search-filters-icon--active",
+          )
+        ) {
+          filterIcon.classList.remove(
+            "content__skills-search-filters-icon--active",
+          );
+        }
+      }
+    }
+
+    document
+      .querySelectorAll(".content__skills-search-filters-tag")
+      .forEach((x) => {
+        const tagName = x.textContent.trim();
+        if (activateTags.includes(tagName)) {
+          x.classList.add("content__skills-search-filters-tag--active");
+        } else if (deactivateTags.includes(tagName)) {
+          x.classList.remove("content__skills-search-filters-tag--active");
+        }
+      });
+
+    this.#lastFilter = JSON.parse(JSON.stringify(data.filter));
+  }
+
+  getChangedTags(currentFilter) {
+    if (!this.#lastFilter) {
+      return [currentFilter.tags, []];
+    }
+
+    let activateTags = [];
+    let deactivateTags = this.#lastFilter.tags.map((x) => x);
+    for (let i = 0; i <= currentFilter.tags.length; i++) {
+      const currentTag = currentFilter.tags[i];
+      const previousTag = this.#lastFilter.tags.find((x) => x === currentTag);
+      if (previousTag) {
+        deactivateTags.splice(deactivateTags.indexOf(previousTag), 1);
+      } else {
+        activateTags.push(currentTag);
+      }
+    }
+    return [activateTags, deactivateTags];
   }
 }
 
 class SkillsFilterManager {
   #searchTermChangeTimeout;
   #callback;
+  #data;
 
-  constructor(callback) {
+  constructor(callback, data) {
     this.#callback = callback;
+    this.#data = data;
   }
 
   onTagChanged(tag) {
-    // if it included in tags then remove otherwise push
-    data.filter.tags.push(tag);
-    // call apply();
+    const indexOfTag = data.filter.tags.indexOf(tag);
+    if (indexOfTag >= 0) {
+      data.filter.tags.splice(indexOfTag, 1);
+    } else {
+      data.filter.tags.push(tag);
+    }
+
+    this.apply();
   }
 
   onSearchTermChanged(value) {
-    // use debounce
-    // and after 300ms call apply
+    if (this.#searchTermChangeTimeout) {
+      clearTimeout(this.#searchTermChangeTimeout);
+    }
+
+    this.#searchTermChangeTimeout = setTimeout(() => {
+      this.#data.filter.searchTerm = value;
+
+      this.apply();
+    }, 300);
   }
 
   apply() {
-    // filter skills and write to filteredSkills
-    // call this.#callback()
+    const filter = this.#data.filter;
+    const searchTerm = filter.searchTerm?.trim()?.toLowerCase() ?? "";
+    if (searchTerm !== "" || filter.tags.length > 0) {
+      this.#data.filteredSkills = this.#data.skills.filter(
+        (x) =>
+          (!searchTerm || x.name.toLowerCase().includes(searchTerm)) &&
+          (!filter.tags.length ||
+            x.tags.some((tag) => filter.tags.includes(tag))),
+      );
+    } else {
+      this.#data.filteredSkills = this.#data.skills;
+    }
+
+    this.#callback();
   }
 }
 
@@ -91,13 +217,72 @@ class SkillsFilterManager {
 const skills = [
   {
     name: "HTML5",
-    description: "",
+    description: `I started studying HTML since 2025 soon will be a year,
+                  studied in collage and was developing it step by step, until i
+                  saw my progress then tried to focus to connect other
+                  frameworks/libraries to it.`,
     level: 5,
     type: "hard",
-    iconClassNames: "fa-html5",
+    iconClassNames: "fa-brands fa-html5",
     tags: ["Programming"],
   },
-  // ...
+  {
+    name: "CSS3",
+    description: `I started studying CSS3 in 2025 along with HTML, studied in
+                  collage along with HTML i was developing skills for both of
+                  them, in collage exams really helped me to develop my skills
+                  and after individual practices as well i achieved this level.`,
+    level: 5,
+    type: "hard",
+    iconClassNames: "fa-brands fa-css3-alt",
+    tags: ["Programming"],
+  },
+  {
+    name: "JavaScript",
+    description: `Started learning in collage as well, developed many of my
+                  skills by my individual practices, collage helped me as well`,
+    level: 4,
+    type: "hard",
+    iconClassNames: "fa-brands fa-square-js",
+    tags: ["Programming"],
+  },
+  {
+    name: "TypeScript",
+    description: `I started studying TypeScript at the start of 2026, it got
+                  easier for me to study as i learned JavaScript in details, i
+                  had few projects from collage and exams so it helped me to
+                  understand this typed superset of JavaScript better and helped
+                  me to develop my skills.`,
+    level: 4,
+    type: "hard",
+    iconClassNames: "fa-brands fa-typescript",
+    tags: ["Programming"],
+  },
+  {
+    name: "Figma",
+    description: `dfgdfg`, // add desc
+    level: 3,
+    type: "hard",
+    iconClassNames: "fa-brands fa-figma",
+    tags: ["Design"],
+  },
+  {
+    name: "Git",
+    description: `dfgdfg`, // add desc
+    level: 4,
+    type: "hard",
+    iconClassNames: "fa-brands fa-git-alt",
+    tags: ["Version Control"],
+  },
+
+  {
+    name: "English",
+    description: `English level`,
+    level: 4,
+    type: "soft",
+    iconClassNames: "fa-solid fa-flag-usa",
+    tags: ["Language"],
+  },
 ];
 
 /**
@@ -118,20 +303,25 @@ const data = {
 };
 
 // RENDERERS
-const renderers = [new SkillsFilterRenderer(), new SkillsRenderer()];
+const renderers = [
+  new SkillsFilterRenderer(),
+  new SkillsRenderer(document.querySelector(".content__skills-card-container")),
+];
 
 function render() {
-  renderers.forEach((rendrer) => rendrer.render(data));
+  renderers.forEach((rendrer) => {
+    rendrer.render(data);
+  });
 }
 
-const filterManager = new SkillsFilterManager(() => render());
+const filterManager = new SkillsFilterManager(() => render(), data);
 
 function onSkillsFilterTagChanged(tag) {
   filterManager.onTagChanged(tag);
 }
 
-function onSkillsFilterSearchTermChanged(event) {
-  filterManager.onSearchTermChanged(event.target.value);
+function onSkillsFilterSearchTermChanged(value) {
+  filterManager.onSearchTermChanged(value);
 }
 
 render();

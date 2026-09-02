@@ -154,36 +154,56 @@
       </section>
       <section id="skills" class="content__skills">
         <span class="content__skills-text">What I can do...</span>
+        <div class="content__skills-search">
+          <div class="content__skills-search-content">
+            <i
+              class="fa-solid fa-magnifying-glass content__skills-search-icon"
+            ></i>
+            <input
+              type="text"
+              class="content__skills-search-input"
+              placeholder="Search for skills..."
+              oninput="onSkillsFilterSearchTermChanged(this.value)"
+            />
+          </div>
+          <div class="content__skills-search-filters">
+            <i
+              class="fa-solid fa-filter content__skills-search-filters-icon"
+            ></i>
+            <button
+              class="content__skills-search-filters-tag content__skills-search-filters-tag-brand-one"
+              onclick="onSkillsFilterTagChanged('Programming')"
+            >
+              <i class="fa-solid fa-circle-plus"></i>
+              <span>Programming</span>
+            </button>
+            <button
+              class="content__skills-search-filters-tag content__skills-search-filters-tag-brand-one"
+              onclick="onSkillsFilterTagChanged('Version Control')"
+            >
+              <i class="fa-solid fa-circle-plus"></i>
+              <span>Version Control</span>
+            </button>
+            <button
+              class="content__skills-search-filters-tag content__skills-search-filters-tag-brand-one"
+              onclick="onSkillsFilterTagChanged('Design')"
+            >
+              <i class="fa-solid fa-circle-plus"></i>
+              <span>Design</span>
+            </button>
+            <button
+              class="content__skills-search-filters-tag content__skills-search-filters-tag-brand-two"
+              onclick="onSkillsFilterTagChanged('Language')"
+            >
+              <i class="fa-solid fa-circle-plus"></i>
+              <span>Language</span>
+            </button>
+          </div>
+        </div>
         <div class="content__skills-card-container">
           <div class="content__skills-cards">
             <div class="content__skills-card-title-container">
               <span class="content__skills-card-title">Hard Skills</span>
-            </div>
-            <div class="content__skills-card">
-              <div class="content__skills-card-icon-container">
-                <i class="fa-brands fa-html5 content__skills-card-icon"></i>
-              </div>
-              <div class="content__skills-card-body">
-                <div class="content__skills-card-body-header">
-                  <h2 class="content__skill-name">HTML 5</h2>
-                  <div class="content__skill-tags">
-                    <span class="content__skill-tag">Programming</span>
-                  </div>
-                  <div class="content__skills-level-container">
-                    <div class="content__skills-level"></div>
-                    <div class="content__skills-level"></div>
-                    <div class="content__skills-level"></div>
-                    <div class="content__skills-level"></div>
-                    <div class="content__skills-level"></div>
-                  </div>
-                </div>
-                <div class="content__skills-card-body-content">
-                  I started studying HTML since 2025 soon will be a year,
-                  studied in collage and was developing it step by step, until i
-                  saw my progress then tried to focus to connect other
-                  frameworks/libraries to it.
-                </div>
-              </div>
             </div>
             <div class="content__skills-card">
               <div class="content__skills-card-icon-container">
@@ -264,35 +284,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="content__skills-search">
-          <div class="content__skills-search-filters">
-            <i
-              class="fa-solid fa-filter content__skills-search-filters-icon"
-            ></i>
-            <button
-              class="content__skills-search-filters-tag content__skills-search-filters-tag-brand-one"
-            >
-              <i class="fa-solid fa-circle-plus"></i>
-              <span>Programming</span>
-            </button>
-            <button
-              class="content__skills-search-filters-tag content__skills-search-filters-tag-brand-two"
-            >
-              <i class="fa-solid fa-circle-plus"></i>
-              <span>Language</span>
-            </button>
-          </div>
-          <div class="content__skills-search-content">
-            <i
-              class="fa-solid fa-magnifying-glass content__skills-search-icon"
-            ></i>
-            <input
-              type="text"
-              class="content__skills-search-input"
-              placeholder="Search for skills..."
-            />
           </div>
         </div>
       </section>
@@ -405,5 +396,6 @@
     </div>
     <script src="main.js"></script>
     <script src="script-navigation.js"></script>
+    <script src="script-skills.js"></script>
   </body>
 </html>
