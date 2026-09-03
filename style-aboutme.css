@@ -27,11 +27,3 @@
   font-size: var(--font-size-lg);
   font-weight: 600;
 }
-
-.content__aboutMe-container-content-center {
-  text-align: center;
-}
-
-.content__aboutMe-container-content-end {
-  text-align: end;
-}
