@@ -65,7 +65,6 @@
   .content__skills-card-body-content {
     font-size: var(--font-size-xs);
     max-height: 90px;
-    overflow-y: auto;
     overflow-wrap: break-word;
     word-break: break-word;
     line-height: 1.4;

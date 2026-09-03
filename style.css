@@ -16,7 +16,7 @@ body {
   padding: var(--spacing-lg);
   width: 100%;
   overflow-y: auto;
-  overflow-x: hidden; /**TODO: i should add styles for scroll bar**/
+  overflow-x: hidden; 
   background-image: linear-gradient(
     color-mix(in srgb, var(--color-accent-brand) 5%, transparent),
     color-mix(in srgb, var(--color-background-default) 10%, transparent),
