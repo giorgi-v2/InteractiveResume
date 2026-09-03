@@ -19,7 +19,6 @@ A responsive, single-page interactive resume website built with semantic HTML, C
 ##  Project Overview
 This project showcases my background, education, and technical skills. It features interactive filtering and searching for skills, along with a theme toggle that remembers user preferences.
 
-##  Requirements Checklist
 
 ### Fulfilled Requirements
 - [x] Responsive layout (Desktop, Tablet, Mobile)
@@ -30,9 +29,6 @@ This project showcases my background, education, and technical skills. It featur
 - [x] "No results found" empty state handling
 - [x] Dark / Light theme toggle with state saved in `localStorage`
 - [x] Published on GitHub Pages
-
-##  Design Reference
-- Design inspired by: 
 
 ##  Built With
 - HTML5
