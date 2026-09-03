@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,14 +36,32 @@
         </div>
       </div>
       <div class="sidebar__navigation">
+        <div class="sidebar__theme-toggle">
+          <button
+            id="themeLightBtn"
+            class="theme-btn"
+            type="button"
+            aria-label="Light Theme"
+          >
+            <i class="fa-solid fa-sun"></i>
+          </button>
+          <button
+            id="themeDarkBtn"
+            class="theme-btn"
+            type="button"
+            aria-label="Dark Theme"
+          >
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </div>
         <nav class="navigation">
           <a href="#home" class="navigation__link navigation__link--active"
             ><i class="fa-solid fa-house navigaion__link-icon"></i
             ><span>Home</span></a
           >
           <a href="#aboutMe" class="navigation__link"
-            ><i class="fa-solid fa-phone navigaion__link-icon"></i
-            ><span>About me</span></a
+            ><i class="fa-solid fa-user navigaion__link-icon"></i>
+            <span>About me</span></a
           >
           <a href="#skills" class="navigation__link"
             ><i class="fa-solid fa-wrench navigaion__link-icon"></i
@@ -56,15 +74,23 @@
         </nav>
       </div>
       <div class="contacts">
-        <div class="contacts__item">
+        <a href="https://t.me/ggeeorgg" class="contacts__item" target="_blank">
           <i class="fa-brands fa-telegram contacts__item-icon"></i>
-        </div>
-        <div class="contacts__item">
+        </a>
+        <a
+          href="https://linkedin.com/in/giorgi-davitashvili-034b1b320"
+          class="contacts__item"
+          target="_blank"
+        >
           <i class="fa-brands fa-square-linkedin contacts__item-icon"></i>
-        </div>
-        <div class="contacts__item">
+        </a>
+        <a
+          href="https://github.com/giorgi-v2"
+          class="contacts__item"
+          target="_blank"
+        >
           <i class="fa-brands fa-github contacts__item-icon"></i>
-        </div>
+        </a>
       </div>
     </div>
     <div class="content">
@@ -125,31 +151,45 @@
       </section>
       <section id="aboutMe" class="content__aboutMe">
         <div class="content__aboutMe-container">
-          <h1>&lt; Little bit about myself /&gt;</h1>
-          <span
-            >&lt; I'm really communicative person, if i like new person's energy
-            and we match, we really are going to have a fun /&gt;</span
-          >
-          <span
-            >&lt; Worked in different fields, made a lot friends, but always
-            stayed professional at work &lt;3 /&gt;</span
-          >
-          <span
-            >&lt; Becoming a programmer/developer was a dream for me since
-            childhood /&gt;</span
-          >
-          <span
-            >&lt; Studied in university backend didn't really liked it and i
-            dropped out, was focused on work /&gt;</span
-          >
-          <span
-            >&lt; But then i made few frontend developer frinds and i felt that
-            this field is for me /&gt;</span
-          >
-          <span
-            >&lt; Learned a lot since 2025 and here i am applying in your
-            company /&gt;</span
-          >
+          <h1 class="content__aboutMe-title">
+            &lt; Little bit about myself /&gt;
+          </h1>
+          <div class="content__aboutMe-container-content">
+            <span class="content__aboutMe-container-content-start"
+              >&lt; The best side of me is that I'm really communicative and
+              friendly /&gt;</span
+            >
+            <span class="content__aboutMe-container-content-center"
+              >&lt; I made a lot friends at work but always stayed professional
+              &lt;3 /&gt;</span
+            >
+            <span class="content__aboutMe-container-content-end"
+              >&lt; And i do have a big experience in different fields
+              /&gt;</span
+            >
+            <span class="content__aboutMe-container-content-start"
+              >&lt; Worked since 18 and was studying at univeristy /&gt;</span
+            >
+            <span class="content__aboutMe-container-content-center"
+              >&lt; In university i was learning backend but i didn't really
+              enjoyed it /&gt;</span
+            >
+            <span class="content__aboutMe-container-content-end"
+              >&lt; And i dropped university, then again i started studying in
+              Academy /&gt;</span
+            >
+            <span class="content__aboutMe-container-content-start"
+              >&lt; Because i knew i had to do something about it i wanted my
+              own profession /&gt;</span
+            >
+            <span class="content__aboutMe-container-content-center"
+              >&lt; Since 2025 i developed a lot of skills with teachers help
+              /&gt;</span
+            >
+            <span class="content__aboutMe-container-content-end"
+              >&lt; And now i'm here applying to your company &lt;3 /&gt;</span
+            >
+          </div>
         </div>
       </section>
       <section id="skills" class="content__skills">
@@ -184,6 +224,21 @@
               <i class="fa-solid fa-circle-plus"></i>
               <span>Version Control</span>
             </button>
+            <button
+              class="content__skills-search-filters-tag content__skills-search-filters-tag-brand-one"
+              onclick="onSkillsFilterTagChanged('Framework')"
+            >
+              <i class="fa-solid fa-circle-plus"></i>
+              <span>Framework</span>
+            </button>
+            <button
+              class="content__skills-search-filters-tag content__skills-search-filters-tag-brand-one"
+              onclick="onSkillsFilterTagChanged('Library')"
+            >
+              <i class="fa-solid fa-circle-plus"></i>
+              <span>Library</span>
+            </button>
+
             <button
               class="content__skills-search-filters-tag content__skills-search-filters-tag-brand-one"
               onclick="onSkillsFilterTagChanged('Design')"

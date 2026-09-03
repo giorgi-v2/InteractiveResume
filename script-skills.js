@@ -138,7 +138,7 @@ class SkillsFilterRenderer {
 
     let activateTags = [];
     let deactivateTags = this.#lastFilter.tags.map((x) => x);
-    for (let i = 0; i <= currentFilter.tags.length; i++) {
+    for (let i = 0; i < currentFilter.tags.length; i++) {
       const currentTag = currentFilter.tags[i];
       const previousTag = this.#lastFilter.tags.find((x) => x === currentTag);
       if (previousTag) {
@@ -164,9 +164,9 @@ class SkillsFilterManager {
   onTagChanged(tag) {
     const indexOfTag = data.filter.tags.indexOf(tag);
     if (indexOfTag >= 0) {
-      data.filter.tags.splice(indexOfTag, 1);
+      this.#data.filter.tags.splice(indexOfTag, 1);
     } else {
-      data.filter.tags.push(tag);
+      this.#data.filter.tags.push(tag);
     }
 
     this.apply();
@@ -238,6 +238,24 @@ const skills = [
     tags: ["Programming"],
   },
   {
+    name: "SCSS",
+    description: `I started studying SCSS in 2026, studied in
+                collage, SCSS really upgraded my skills as for CSS as for itself.
+                `,
+    level: 5,
+    type: "hard",
+    iconClassNames: "fa-brands fa-sass",
+    tags: ["Programming"],
+  },
+  {
+    name: "Tailwind CSS",
+    description: `I started studying Tailwind in collage, at first it was weird but by the time i developed my skills and really enjoyed using this framework`,
+    level: 3,
+    type: "hard",
+    iconClassNames: "fa-brands fa-tailwind-css",
+    tags: ["Framework"],
+  },
+  {
     name: "JavaScript",
     description: `Started learning in collage as well, developed many of my
                   skills by my individual practices, collage helped me as well`,
@@ -259,8 +277,16 @@ const skills = [
     tags: ["Programming"],
   },
   {
+    name: "React",
+    description: `I started studying React by myself i was watching videos and was doing some small task, now i'm learning it in collage`,
+    level: 3,
+    type: "hard",
+    iconClassNames: "fa-brands fa-react",
+    tags: ["Library"],
+  },
+  {
     name: "Figma",
-    description: `dfgdfg`, // add desc
+    description: `In collage our teacher showed us how to use it, did few projects on it in collage`,
     level: 3,
     type: "hard",
     iconClassNames: "fa-brands fa-figma",
@@ -268,7 +294,7 @@ const skills = [
   },
   {
     name: "Git",
-    description: `dfgdfg`, // add desc
+    description: `Studied in collage as well, i do have few projects on my Git (not all of them are finished)`,
     level: 4,
     type: "hard",
     iconClassNames: "fa-brands fa-git-alt",
@@ -276,9 +302,33 @@ const skills = [
   },
 
   {
+    name: "Georgian",
+    description: `Native`,
+    level: 5,
+    type: "soft",
+    iconClassNames: "fa-solid fa-flag-usa",
+    tags: ["Language"],
+  },
+  {
     name: "English",
-    description: `English level`,
+    description: `B2-C1`,
     level: 4,
+    type: "soft",
+    iconClassNames: "fa-solid fa-flag-usa",
+    tags: ["Language"],
+  },
+  {
+    name: "Russian",
+    description: `B2`,
+    level: 4,
+    type: "soft",
+    iconClassNames: "fa-solid fa-flag-usa",
+    tags: ["Language"],
+  },
+  {
+    name: "Korean",
+    description: `A1-A2`,
+    level: 1,
     type: "soft",
     iconClassNames: "fa-solid fa-flag-usa",
     tags: ["Language"],

@@ -6,3 +6,32 @@
   display: flex;
   flex-direction: column;
 }
+
+.content__aboutMe-title {
+  text-align: center;
+  font-size: 64px;
+  color: var(--color-text-primary);
+}
+
+.content__aboutMe-container-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding-top: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
+  padding-left: var(--spacing-sm);
+  padding-right: var(--spacing-md);
+  gap: 64px;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+.content__aboutMe-container-content-center {
+  text-align: center;
+}
+
+.content__aboutMe-container-content-end {
+  text-align: end;
+}

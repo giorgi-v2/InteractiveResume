@@ -280,7 +280,8 @@
 .content__skills-search-input {
   border-width: 0;
   width: 100%;
-  background: transparent;
+  background-color: transparent;
+  color: var(--color-text-primary);
 }
 
 .content__skills-search-input:focus {

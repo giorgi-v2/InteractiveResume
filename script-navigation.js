@@ -1,36 +1,54 @@
-navigation.addEventListener("navigate", e => {
-    let navigationId = e.destination.url.split("#")[1]?.trim();
-    if (!navigationId) {
-        return;
-    }
+let isNavClicking = false;
+let scrollTimeout = null;
 
-    navigationId = `#${navigationId}`;
-
-    const navigationLinkHtmlElements = document.querySelectorAll(".navigation__link");
-    navigationLinkHtmlElements.forEach(navigationLinkHtmlElement => {
-        navigationLinkHtmlElement.classList.remove("navigation__link--active");
-
-        if (navigationLinkHtmlElement.getAttribute("href") === navigationId) {
-            navigationLinkHtmlElement.classList.add("navigation__link--active");
-        }
-    })
-});
-
-// Configure changing of URL with scroll to sections
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      const id = entry.target.getAttribute("id");
-      
-      if (id) {
-        history.replaceState(null, null, `#${id}`);
-      }
-    }
+function updateActiveLink(targetHash) {
+  const hash = targetHash || window.location.hash || "#home";
+  document.querySelectorAll(".navigation__link").forEach((link) => {
+    link.classList.toggle(
+      "navigation__link--active",
+      link.getAttribute("href") === hash,
+    );
   });
-}, {
-  root: document.querySelector(".content"),
-  rootMargin: "-20% 0px -60% 0px",
-  threshold: 0
+}
+
+document.querySelectorAll(".navigation__link").forEach((link) => {
+  link.addEventListener("click", () => {
+    isNavClicking = true;
+    const hash = link.getAttribute("href");
+
+    updateActiveLink(hash);
+
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      isNavClicking = false;
+    }, 800);
+  });
 });
 
-document.querySelectorAll("section").forEach((section) => observer.observe(section));
+const observer = new IntersectionObserver(
+  (entries) => {
+    if (isNavClicking) return;
+
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute("id");
+
+        if (id) {
+          history.replaceState(null, null, `#${id}`);
+          updateActiveLink(`#${id}`);
+        }
+      }
+    });
+  },
+  {
+    root: document.querySelector(".content"),
+    rootMargin: "-20% 0px -60% 0px",
+    threshold: 0,
+  },
+);
+
+document
+  .querySelectorAll("section")
+  .forEach((section) => observer.observe(section));
+
+updateActiveLink();
