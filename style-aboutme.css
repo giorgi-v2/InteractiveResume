@@ -1,5 +1,46 @@
+@media (max-width: 1024px) {
+  .content__aboutMe-title {
+    font-size: 40px;
+  }
+
+  .content__aboutMe-content-description {
+    font-size: 20px;
+    gap: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .content__aboutMe {
+    height: auto; 
+  }
+
+  .content__aboutMe-title {
+    font-size: 28px;
+  }
+
+  .content__aboutMe-content-description {
+    font-size: 16px;
+    gap: var(--spacing-lg);
+  }
+
+  .content__aboutMe-container-body {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .content__aboutMe-title {
+    font-size: 22px;
+  }
+
+  .content__aboutMe-content-description {
+    font-size: 14px;
+  }
+}
+
 .content__aboutMe {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .content__aboutMe-container-body {

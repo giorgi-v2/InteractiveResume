@@ -1,3 +1,118 @@
+@media (max-width: 1024px) {
+  .content__home-greeting {
+    gap: var(--spacing-xl);
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+  }
+
+  .content__home-greeting-visual-container {
+    height: 220px;
+  }
+
+  .content__home-greeting-visual {
+    width: 52px;
+    height: 52px;
+  }
+
+  .content__home-greeting-line {
+    gap: var(--spacing-md);
+  }
+
+  .content__home-greeting-line-text {
+    font-size: 44px;
+  }
+
+  .content__home-greeting-line-number {
+    font-size: 16px;
+  }
+
+  .content__home-greeting-line-tag {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content__home {
+    min-height: 100vh;
+    height: auto;
+
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+  }
+
+  .content__home-greeting {
+    width: 100%;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 0;
+  }
+
+  .content__home-greeting-visual-container {
+    display: none;
+  }
+
+  .content__home-greeting-lines {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .content__home-greeting-line {
+    width: 100%;
+    gap: var(--spacing-sm);
+  }
+
+  .content__home-greeting-line-text {
+    font-size: 32px;
+  }
+
+  .content__home-greeting-line-number {
+    font-size: 13px;
+  }
+
+  .content__home-greeting-line-tag {
+    font-size: 20px;
+  }
+
+  .content__home-footer {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+  }
+
+  .content__home-footer-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content__home {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+
+  .content__home-greeting-line {
+    gap: var(--spacing-xs);
+  }
+
+  .content__home-greeting-line-text {
+    font-size: 24px;
+  }
+
+  .content__home-greeting-line-number {
+    font-size: 11px;
+  }
+
+  .content__home-greeting-line-tag {
+    font-size: 16px;
+  }
+
+  .content__home-footer-text {
+    font-size: 12px;
+  }
+}
+
 .content__home {
   display: flex;
   flex-direction: column;
@@ -165,17 +280,3 @@
   animation: rotation 0.7s ease infinite;
 }
 
-@media (max-width: 768px) {
-  .content__home-greeting-visual-container {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .content__home-greeting-visual-container {
-    display: none;
-  }
-  .content__home-greeting-line-text {
-    font-size: 32px;
-  }
-}

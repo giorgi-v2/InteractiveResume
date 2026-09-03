@@ -1,3 +1,151 @@
+@media (max-width: 1024px) {
+  .content__education {
+    padding: var(--spacing-xl);
+    gap: var(--spacing-md);
+  }
+
+  .content__education-text {
+    font-size: var(--font-size-2xl);
+  }
+
+  .content__education-list-row-institution {
+    font-size: var(--font-size-md);
+    max-width: 85%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .content__education-list-row-card {
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .content__education-name {
+    font-size: var(--font-size-sm);
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .content__education-card-body-content {
+    font-size: var(--font-size-xs);
+    max-width: 88%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .content__education-list-row-dates {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 768px) {
+  .content__education {
+    padding: var(--spacing-lg);
+    height: auto;
+  }
+
+  .content__education-text {
+    font-size: var(--font-size-xl);
+  }
+
+  .content__education-content {
+    gap: var(--spacing-md);
+  }
+
+  .content__education-list-row-institution {
+    font-size: var(--font-size-sm);
+    max-width: 85%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .content__education-list-row {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .content__education-list-row-dates {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-xs);
+  }
+
+  .content__education-list-row-card {
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .content__education-card-icon-container {
+    padding: var(--spacing-md);
+  }
+
+  .content__education-card-icon {
+    font-size: var(--font-size-xs);
+  }
+
+  .content__education-name {
+    font-size: var(--font-size-xs);
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: left;
+  }
+
+  .content__education-card-body {
+    gap: var(--spacing-md);
+  }
+
+  .content__education-tag {
+    font-size: var(--font-size-xs);
+  }
+
+  .content__education-card-body-content {
+    font-size: var(--font-size-xs);
+    max-width: 90%;
+    line-height: 1.4;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .content__education {
+    padding: var(--spacing-md);
+  }
+
+  .content__education-text {
+    font-size: var(--font-size-lg);
+  }
+
+  .content__education-list-row-institution {
+    font-size: var(--font-size-xs);
+    max-width: 88%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .content__education-list-row-card {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+  }
+
+  .content__education-card-icon-container {
+    padding: var(--spacing-sm);
+  }
+
+  .content__education-name {
+    font-size: var(--font-size-xs);
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .content__education-card-body-content {
+    font-size: var(--font-size-xs);
+    max-width: 92%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
 .content__education {
   display: flex;
   flex-direction: column;
