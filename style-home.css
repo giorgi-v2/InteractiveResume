@@ -6,7 +6,7 @@
   }
 
   .content__home-greeting-visual-container {
-    height: 220px;
+    display: none !important;
   }
 
   .content__home-greeting-visual {
@@ -19,7 +19,7 @@
   }
 
   .content__home-greeting-line-text {
-    font-size: 44px;
+    font-size: var(--font-size-2xl);
   }
 
   .content__home-greeting-line-number {
@@ -279,4 +279,3 @@
 .content__home-footer-icon {
   animation: rotation 0.7s ease infinite;
 }
-

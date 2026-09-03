@@ -5,11 +5,11 @@
   }
 
   .content__education-text {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-lg);
   }
 
   .content__education-list-row-institution {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-sm);
     max-width: 85%;
     overflow-wrap: break-word;
     word-break: break-word;
