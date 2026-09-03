@@ -274,7 +274,7 @@
   gap: var(--spacing-sm);
   border: 2px solid var(--color-border-secondary);
   border-radius: 999px;
-  background-color: var(--color-background-default);
+  background-color: transparent;
 }
 
 .content__skills-search-input {
