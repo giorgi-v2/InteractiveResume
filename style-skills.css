@@ -41,8 +41,8 @@
 
 @media (max-width: 480px) {
   .content__skills {
-    padding: var(--spacing-sm);
-    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) !important;
+    gap: var(--spacing-sm) !important;
   }
 
   .content__skills-card {

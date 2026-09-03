@@ -110,7 +110,7 @@
 
 @media (max-width: 480px) {
   .content__education {
-    padding: var(--spacing-md);
+    padding: var(--spacing-md) !important;
   }
 
   .content__education-text {
