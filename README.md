@@ -4,6 +4,15 @@
 
 A responsive, single-page interactive resume website built with semantic HTML, CSS, and vanilla JavaScript.
 
+## Github
+
+- **Github Profile:** [https://github.com/giorgi-v2]
+
+## Github Repository
+
+- **Github Repository:** [https://github.com/giorgi-v2/InteractiveResume]
+
+
 ##  Live Demo
 - **GitHub Pages:** [https://giorgi-v2.github.io/InteractiveResume/]
 
